@@ -9,7 +9,7 @@ const app = express();
 const port = process.env.PORT || 4001;
 require('dotenv').config();
 
-app.use(express.static('public/build'));
+app.use(express.static('client/build'));
 app.use(cookieParser());
 app.use(express.json());
 
