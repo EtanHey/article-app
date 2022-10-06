@@ -9,7 +9,6 @@ const app = express();
 const port = process.env.PORT || 4001;
 require('dotenv').config();
 
-app.use(express.static('client/build'));
 app.use(cookieParser());
 app.use(express.json());
 
@@ -24,9 +23,12 @@ mongoose
     });
 
 import userRouter from './server/router/userRouter';
-import articleRouter from './server/router/articleRouter';
 app.use('/api/users', userRouter);
+import articleRouter from './server/router/articleRouter';
 app.use('/api/articles', articleRouter);
+
+app.use(express.static('./client/build'));
+app.use('/*', express.static('./client/build'));
 
 app.listen(port, () => {
     return console.log(`Express is listening at http://localhost:${port}`);

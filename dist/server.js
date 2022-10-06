@@ -10,11 +10,10 @@ const cookie_parser_1 = __importDefault(require("cookie-parser"));
 // const mongoose = require('mongoose');
 // const cookieParser = require('cookie-parser');
 const MONGODB_URI = process.env.MONGODB_URI;
-const app = (0, express_1.default)();
+const app = express_1.default();
 const port = process.env.PORT || 4001;
 require('dotenv').config();
-app.use(express_1.default.static('client/build'));
-app.use((0, cookie_parser_1.default)());
+app.use(cookie_parser_1.default());
 app.use(express_1.default.json());
 mongoose_1.default
     .connect(MONGODB_URI)
@@ -26,10 +25,11 @@ mongoose_1.default
     console.log(err.message);
 });
 const userRouter_1 = __importDefault(require("./server/router/userRouter"));
-const articleRouter_1 = __importDefault(require("./server/router/articleRouter"));
 app.use('/api/users', userRouter_1.default);
+const articleRouter_1 = __importDefault(require("./server/router/articleRouter"));
 app.use('/api/articles', articleRouter_1.default);
+app.use(express_1.default.static('./client/build'));
+app.use('/*', express_1.default.static('./client/build'));
 app.listen(port, () => {
     return console.log(`Express is listening at http://localhost:${port}`);
 });
-//# sourceMappingURL=server.js.map
