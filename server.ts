@@ -1,10 +1,11 @@
-import 'dotenv/config'
 import express from "express";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 const MONGODB_URI = process.env.MONGODB_URI
 const app = express();
 const port = process.env.PORT || 4001;
+require('dotenv').config();
+
 
 app.use(express.static("public/build"));
 app.use(cookieParser())
