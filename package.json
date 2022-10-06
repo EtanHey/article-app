@@ -5,9 +5,7 @@
     "main": "server.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "tsc": "tsc",
-        "start": "node dist/server.js && cd client && npm i && npm start",
-        "postinstall": "npm run tsc"
+        "tsc": "tsc"
     },
     "keywords": [],
     "author": "",
