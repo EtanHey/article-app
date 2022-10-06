@@ -9,10 +9,10 @@ const cookie_parser_1 = __importDefault(require("cookie-parser"));
 // const express = require('express');
 // const mongoose = require('mongoose');
 // const cookieParser = require('cookie-parser');
+require('dotenv').config();
 const MONGODB_URI = process.env.MONGODB_URI;
 const app = express_1.default();
 const port = process.env.PORT || 4001;
-require('dotenv').config();
 app.use(cookie_parser_1.default());
 app.use(express_1.default.json());
 mongoose_1.default

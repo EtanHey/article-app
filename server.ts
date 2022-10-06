@@ -4,14 +4,13 @@ import cookieParser from 'cookie-parser';
 // const express = require('express');
 // const mongoose = require('mongoose');
 // const cookieParser = require('cookie-parser');
+require('dotenv').config();
 const MONGODB_URI = process.env.MONGODB_URI;
 const app = express();
 const port = process.env.PORT || 4001;
-require('dotenv').config();
 
 app.use(cookieParser());
 app.use(express.json());
-
 mongoose
     .connect(MONGODB_URI)
     .then(() => {
