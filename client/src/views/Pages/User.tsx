@@ -1,5 +1,5 @@
 import {useTransition, useEffect} from 'react';
-import {useParams, useNavigate} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import {motion} from 'framer-motion';
 import Back from '../Components/Back';
 import {UserInfo} from '../../AnimatedRoutes';

@@ -164,21 +164,25 @@ function AnimatedRoutes() {
         setArticleSearchTerm(e.target.value);
     }
 
-    async function handleUpdateArticle(ev: any, articleId: string) {
+    async function handleUpdateArticle(ev: any, 
+        // articleId: string
+        ) {
         try {
             ev.preventDefault();
             let {updateArticleTitle, updateArticleContent} = ev.target.elements;
             updateArticleTitle = updateArticleTitle.value;
             updateArticleContent = updateArticleContent.value;
-            const {data} = await axios.patch('/api/articles/update-article', {updateArticleTitle, updateArticleContent, articleId});
+            // const {data} = await axios.patch('/api/articles/update-article', {updateArticleTitle, updateArticleContent, articleId});
             getAllArticles(loginUserId);
         } catch (error) {
             console.log(error);
         }
     }
-    async function handleDeleteArticle(ownerId: string, articleId: string) {
+    async function handleDeleteArticle(
+        // ownerId: string, articleId: string
+        ) {
         try {
-            const {data} = await axios.delete('/api/articles/delete-article', {data:{ownerId: ownerId, articleId: articleId}});
+            // const {data} = await axios.delete('/api/articles/delete-article', {data:{ownerId: ownerId, articleId: articleId}});
             getAllArticles(loginUserId);
         } catch (error) {
             console.log(error);
