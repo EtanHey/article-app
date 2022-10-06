@@ -23,8 +23,12 @@ mongoose
         console.log(err.message);
     });
 
-import userRouter from './server/router/userRouter';
-import articleRouter from './server/router/articleRouter';
+// import userRouter from './server/router/userRouter';
+// import articleRouter from './server/router/articleRouter';
+
+const userRouter = require('./server/router/userRouter')
+const articleRouter = require('./server/router/articleRouter')
+
 app.use('/api/users', userRouter);
 app.use('/api/articles', articleRouter);
 
