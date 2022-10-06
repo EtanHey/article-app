@@ -1,9 +1,9 @@
-// import express from 'express';
-// import mongoose from 'mongoose';
-// import cookieParser from 'cookie-parser';
-const express = require('express');
-const mongoose = require('mongoose');
-const cookieParser = require('cookie-parser');
+import express from 'express';
+import mongoose from 'mongoose';
+import cookieParser from 'cookie-parser';
+// const express = require('express');
+// const mongoose = require('mongoose');
+// const cookieParser = require('cookie-parser');
 const MONGODB_URI = process.env.MONGODB_URI;
 const app = express();
 const port = process.env.PORT || 4001;
